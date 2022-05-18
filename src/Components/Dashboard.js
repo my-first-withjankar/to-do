@@ -2,9 +2,9 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import toast, { Toaster } from 'react-hot-toast';
 
+
 const Dashboard = () => {
     const { register, handleSubmit } = useForm();
-
 
     const onSubmit = data => {
         const url = `https://afternoon-oasis-20041.herokuapp.com/task`;
@@ -18,7 +18,7 @@ const Dashboard = () => {
             .then(res => res.json())
             .then(result => {
                 console.log(result);
-                toast.success('added')
+                toast.success('Added Successfully')
             })
     };
     return (

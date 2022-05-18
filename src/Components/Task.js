@@ -1,4 +1,5 @@
 import React from 'react';
+import toast, { Toaster } from 'react-hot-toast';
 
 const Task = ({ task }) => {
     const { _id, name, description } = task;
@@ -13,7 +14,8 @@ const Task = ({ task }) => {
             })
                 .then(res => res.json())
                 .then(data => {
-                    console.log(data); 
+                    console.log(data);
+                    toast.success('deleted')
                 })
         }
     }
@@ -30,6 +32,7 @@ const Task = ({ task }) => {
                 <button type="button" class="btn btn-danger" onClick={() => handleDelete(_id)}>Remove Tasks</button>
 
             </div>
+            <Toaster />
         </div>
     );
 };

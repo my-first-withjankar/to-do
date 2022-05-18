@@ -22,7 +22,7 @@ const Navbar = () => {
                     <Link class="nav-item nav-link" to='/'>Home</Link>
                     <Link class="nav-item nav-link" to='/dashboard'>Dashboard</Link>
                     {
-                        user ? <button onClick={Logout} className=''>  <Link class="nav-item nav-link" to='/'>Sign Out</Link></button> : <Link class="nav-item nav-link" to='login'>Login</Link>
+                        user ? <button onClick={Logout} className='border-0 bg-none'>  <Link class="nav-item nav-link" to='/'>Sign Out</Link></button> : <Link class="nav-item nav-link" to='login'>Login</Link>
                     }
                 </div>
             </div>

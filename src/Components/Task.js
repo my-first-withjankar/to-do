@@ -7,17 +7,13 @@ const Task = ({ task }) => {
         const proceed = window.confirm('are you sure you want to delete');
         if (proceed) {
             console.log(id);
-            const url = `http://localhost:5000/task/${id}`;
+            const url = `https://afternoon-oasis-20041.herokuapp.com/task/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })
                 .then(res => res.json())
                 .then(data => {
-                    console.log(data);
-                    // if (data.deletedCount > 0) {
-                    //     const remaining = products.filter(product => product._id !== id)
-                    //     setProducts(remaining)
-                    // }
+                    console.log(data); 
                 })
         }
     }
@@ -31,7 +27,8 @@ const Task = ({ task }) => {
                 <h5 class="card-title">{name}</h5>
                 <hr />
                 <p class="card-text">{description}</p>
-                <button onClick={() => handleDelete(_id)}>Remove Tasks</button>
+                <button type="button" class="btn btn-danger" onClick={() => handleDelete(_id)}>Remove Tasks</button>
+
             </div>
         </div>
     );

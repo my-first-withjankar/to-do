@@ -7,7 +7,7 @@ const Home = () => {
     const [tasks, setTasks] = useState([])
 
     useEffect(() => {
-        fetch('http://localhost:5000/task')
+        fetch('https://afternoon-oasis-20041.herokuapp.com/task')
             .then(res => res.json())
             .then(data => setTasks(data))
     }, [tasks])
@@ -16,13 +16,8 @@ const Home = () => {
         <div className='container'>
             <h1>Task {tasks.length}</h1>
 
+            <button type="button" class="btn btn-info my-2"><Link to='dashboard' className='text-decoration-none text-white'>Add Task</Link></button>
 
-            <Link
-                className='text-decoration-none  btn btn-info'
-                to='/dashboard'
-            >
-                <p> Add Task </p>
-            </Link>
 
             <div className='row'>
                 {tasks.map(task => <Task key={task._id} task={task}></Task>)}

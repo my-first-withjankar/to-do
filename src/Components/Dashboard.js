@@ -7,7 +7,7 @@ const Dashboard = () => {
 
 
     const onSubmit = data => {
-        const url = `http://localhost:5000/task`;
+        const url = `https://afternoon-oasis-20041.herokuapp.com/task`;
         fetch(url, {
             method: 'POST',
             headers: {
